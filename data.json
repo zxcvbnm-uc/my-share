@@ -1,14 +1,9 @@
 {
   "software_list": [
     {
-      "name": "心做资源库",
-      "url": "这里放下载链接",
+      "name": "测试软件",
+      "url": "https://example.com/test.apk",
       "tag": "v1.0"
-    },
-    {
-      "name": "心做资源库_1.0.0",
-      "url": "https://raw.githubusercontent.com/zxcvbnm-uc/my-share/main/apps/获得一个52GB虚假内存的文件.sh",
-      "tag": "2026-03-01"
     }
   ]
 }
