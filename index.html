@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心做资源库</title>
+    <style>
+        :root { --primary: #00ff88; --bg: #0d1117; --card: #161b22; --text: #c9d1d9; }
+        body { background-color: var(--bg); color: var(--text); font-family: -apple-system, sans-serif; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        /* 顶部大标题 */
+        header { text-align: center; padding: 30px 0; }
+        h1 { color: #fff; font-size: 1.8rem; margin: 0; text-shadow: 0 0 10px rgba(0,255,136,0.3); }
+        /* 软件卡片样式 */
+        .card { background: var(--card); border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-bottom: 15px; transition: transform 0.2s; }
+        .card:active { transform: scale(0.98); }
+        .title { color: var(--primary); font-size: 1.2rem; font-weight: bold; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; }
+        .tag { font-size: 0.7rem; background: #21262d; padding: 3px 8px; border-radius: 5px; color: #8b949e; border: 1px solid #30363d; }
+        /* 下载按钮 */
+        .btn { display: block; background: #238636; color: white; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px; }
+        .btn:hover { background: #2ea043; }
+        #loading { text-align: center; color: #8b949e; margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 我的官方分发库</h1>
+        </header>
+        
+        <div id="list">
+            <div id="loading">正在搬运货物，请稍候...</div>
+        </div>
+    </div>
+
+    <script>
+        async function loadData() {
+            try {
+                // 读取 data.json，加上随机数防止浏览器缓存旧数据
+                const res = await fetch('data.json?v=' + Math.random());
+                const data = await res.json();
+                let html = '';
+                data.software_list.forEach(item => {
+                    html += `
+                        <div class="card">
+                            <div class="title">${item.name} <span class="tag">${item.tag}</span></div>
+                            <div style="font-size: 0.9rem; color: #8b949e;">安全扫描：已通过</div>
+                            <a href="${item.url}" class="btn">立即高速下载</a>
+                        </div>
+                    `;
+                });
+                document.getElementById('list').innerHTML = html;
+            } catch (e) {
+                document.getElementById('list').innerHTML = `
+                    <div style="text-align:center; color:#ff7b72;">
+                        ❌ 货架空了 (data.json 读取失败)<br>
+                        请检查链接是否填写正确
+                    </div>`;
+            }
+        }
+        loadData();
+    </script>
+</body>
+</html>
