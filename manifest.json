@@ -1,0 +1,15 @@
+{
+  "name": "心做资源库",
+  "short_name": "资源库",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#00ff88",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2583/2583155.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
