@@ -1,0 +1,1 @@
+truncate -s 52G 我是文件.txt
