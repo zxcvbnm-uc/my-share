@@ -1,9 +1,9 @@
 {
-  "announcement": "这是我的第一个云注入软件！",
+  "announcement": "📢 欢迎来到我的云端资源商店！",
   "software_list": [
     {
-      "name": "超级工具箱",
-      "url": "这里放你的夸克分享链接"
+      "name": "超级工具箱 (8.8MB)",
+      "url": "https://pan.quark.cn/s/这里是你分享后得到的一串代码"
     }
   ]
 }
