@@ -1,9 +1,9 @@
 {
+  "announcement": "这是我的第一个云注入软件！",
   "software_list": [
     {
-      "name": "测试软件",
-      "url": "https://example.com/test.apk",
-      "tag": "v1.0"
+      "name": "超级工具箱",
+      "url": "这里放你的夸克分享链接"
     }
   ]
 }
